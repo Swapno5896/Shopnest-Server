@@ -1,26 +1,24 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const app = express()
+const express = require('express');
+const mongoose =require('mongoose');
+const bodyParser = require("body-parser");
 require('dotenv').config()
-app.use(cors())
-app.use(bodyParser.json())
+const app = express()
+app.use(bodyParser.json());
+
+// can come changes
+const productRouter = require('./routers/productRouter')
+app.use('/products',productRouter);
+
+
+
+
 const port = 5000
-// console.log(process.env.DB_USER);
-const MongoClient = require('mongodb').MongoClient;
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.kv6ok.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("shopnest").collection("products");
-  app.get('/', (req, res) => {
-    res.send('Hello world!')
-  })
+const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.kv6ok.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+ .then(() => console.log('connected '))
+ .catch(err => console.log(err))
 
-
-
-
-});
-
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
