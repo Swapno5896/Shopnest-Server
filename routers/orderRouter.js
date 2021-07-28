@@ -1,16 +1,16 @@
 const Router = require('express').Router();
-const ProductMoel = require('../model/productModel')
+const OrderMoel = require('../model/orderModel')
 
-const getAllProducts = (req,res)=>{
-    ProductMoel.find()
+const getAllOrder = (req,res)=>{
+    OrderMoel.find()
     .then(data=>res.send(data))
     .catch(err=>console.log(err))
 } 
 
-const addNewProduct = (req,res)=>{
-     const pd = new ProductMoel(req.body)
+const addNewOrder = (req,res)=>{
+     const od = new OrderMoel(req.body)
     // console.log(pd)
-    pd.save(pd)
+    od.save(od)
     .then(data=>res.send(data))
     .catch(err=>{
         console.log(err)
@@ -18,23 +18,23 @@ const addNewProduct = (req,res)=>{
     })
 }
 
-const getOneProduct = (req,res)=>{
-    ProductMoel.findById(req.params.id)
+const getOneOrder = (req,res)=>{
+    OrderMoel.findById(req.params.id)
     .then(data=>res.send(data))
     .catch(err=>console.log(err))
 }
 
-const deleteProduct = (req,res) =>{
-    ProductMoel.findByIdAndDelete(req.params.id)
+const deleteOrder= (req,res) =>{
+    OrderMoel.findByIdAndDelete(req.params.id)
     .then(data=>res.send(data))
     .catch(err=>console.log(err))
 }
 
 
 Router.route('/')
-.get(getAllProducts)
-.post(addNewProduct)
+.get(getAllOrder)
+.post(addNewOrder)
 Router.route('/:id')
-.get(getOneProduct)
-.delete(deleteProduct)
+.get(getOneOrder)
+.delete(deleteOrder)
 module.exports = Router;

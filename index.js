@@ -5,9 +5,11 @@ require('dotenv').config()
 const app = express()
 app.use(bodyParser.json());
 
-// can come changes
+// routers
 const productRouter = require('./routers/productRouter')
+const orderRouter = require('./routers/orderRouter')
 app.use('/products',productRouter);
+app.use('/order',orderRouter);
 
 
 
