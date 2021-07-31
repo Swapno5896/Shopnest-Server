@@ -8,6 +8,9 @@ app.use(bodyParser.json());
 // routers
 const productRouter = require('./routers/productRouter');
 const orderRouter = require('./routers/orderRouter');
+
+
+
 app.use('/products', productRouter);
 app.use('/order', orderRouter);
 
