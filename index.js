@@ -6,13 +6,17 @@ const app = express();
 app.use(bodyParser.json());
 
 // routers
+const customerRouter = require('./routers/customerRouter')
+const sellerRooter = require('./routers/cellerRouter')
 const productRouter = require('./routers/productRouter');
 const orderRouter = require('./routers/orderRouter');
 
 
-
+app.use('/customer',customerRouter);
+app.use('/seller',sellerRooter)
 app.use('/products', productRouter);
 app.use('/order', orderRouter);
+
 
 const PORT = process.env.PORT || 8080;
 const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.kv6ok.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
