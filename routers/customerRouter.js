@@ -12,7 +12,7 @@ const addNewCustomer = (req,res)=>{
    })
 }
 
-const getSpeceficCustomer = (req,res)=>{
+const getSpecificCustomer = (req,res)=>{
     CustomerModel.findById(req.params.id)
     .then(data=>res.send(data))
     .catch(err=>console.log(err))
@@ -27,6 +27,6 @@ const deleteCustomer = (req,res) =>{
 Router.route('/')
 .post(addNewCustomer)
 Router.route('/:id')
-.get(getSpeceficCustomer)
+.get(getSpecificCustomer)
 .delete(deleteCustomer)
 module.exports = Router;

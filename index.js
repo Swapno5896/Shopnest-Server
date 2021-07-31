@@ -13,7 +13,7 @@ const orderRouter = require('./routers/orderRouter');
 
 
 app.use('/customer',customerRouter);
-app.use('/seller',sellerRooter)
+app.use('/seller',sellerRooter);
 app.use('/products', productRouter);
 app.use('/order', orderRouter);
 

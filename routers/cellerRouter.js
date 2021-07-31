@@ -12,7 +12,7 @@ const addNewSeller = (req,res)=>{
    })
 }
 
-const getSpeceficSeller = (req,res)=>{
+const getSpecificSeller = (req,res)=>{
     CellertMoel.findById(req.params.id)
     .then(data=>res.send(data))
     .catch(err=>console.log(err))
@@ -26,6 +26,6 @@ const deleteSeller = (req,res) =>{
 Router.route('/')
 .post(addNewSeller)
 Router.route('/:id')
-.get(getSpeceficSeller)
+.get(getSpecificSeller)
 .delete(deleteSeller)
 module.exports = Router;
