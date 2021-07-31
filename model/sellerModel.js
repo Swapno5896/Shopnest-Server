@@ -1,5 +1,5 @@
 const {Schema,model} = require('mongoose');
-const cellerSchema = new Schema({
+const sellerSchema = new Schema({
     name:{type:String,require:[true,'Please insert your name']},
     adminEmail:{type:String,require:[true,'Please insert your email']},
     collaborator:{id:String,isAccepted:Boolean},
@@ -8,4 +8,4 @@ const cellerSchema = new Schema({
     location:{latitude:String,longitude:String}
 });
 
-module.exports = model('cellers',cellerSchema);
+module.exports = model('cellers',sellerSchema);

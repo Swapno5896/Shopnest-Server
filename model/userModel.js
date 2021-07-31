@@ -8,4 +8,4 @@ const usersSchema = new Schema({
     pamentMethod:String,
 });
 
-module.exports = model('users',usersSchema);
+module.exports = model('customer',usersSchema);
