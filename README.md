@@ -1,4 +1,7 @@
 # Shopnest-Server
+
+
+##  products
 ### Get all Products = http://localhost:5000/products
 ### Post Products = http://localhost:5000/products
 ### Get specific product by id = http://localhost:5000/products/id
@@ -17,3 +20,9 @@
 ### get specific order = http://localhost:5000/order/id
 ### delete order =  http://localhost:5000/order/id
 
+## seller
+
+ ###  get all seller = http://localhost:5000/seller/
+ ### add new seller = http://localhost:5000/seller/
+### get specific seller = http://localhost:5000/seller/id
+### delete seller =  http://localhost:5000/seller/id
