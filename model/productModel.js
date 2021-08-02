@@ -1,8 +1,10 @@
 const {Schema,model} = require('mongoose');
 
 const ProductSchema = new Schema({
-    name:String,
-    Price:{type:Number,min:10,max:100}
+    name:{type:String,require:[true,'Please insert product name']},
+    price:{type:Number,min:10},
+    shopowner:{type:String,require:[true,'Please insert  Shopowner  ']},
+    imgUrl:{type:String,require:[true,'Should have image']},
 });
 
 

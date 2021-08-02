@@ -25,7 +25,7 @@ mongoose
   .then(() => console.log('connected '))
   .catch((err) => console.log(err));
 
-app.listen(port | process.env.PORT, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(PORT | process.env.PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`)
 })
 
