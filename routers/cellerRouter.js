@@ -9,7 +9,7 @@ const getAllSeller = (req,res)=>{
 const addNewSeller = (req,res)=>{
     const seller = new CellertMoel(req.body)
    // console.log(pd)
-   pd.save(seller)
+   seller.save(seller)
    .then(data=>res.send(data))
    .catch(err=>{
        console.log(err)
