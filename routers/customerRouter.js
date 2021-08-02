@@ -1,10 +1,16 @@
 const Router = require('express').Router();
 const CustomerModel = require('../model/customerModel')
 
+const getAllCustomer = (req,res)=>{
+    CustomerModel.find()
+    .then(data=>res.send(data))
+    .catch(err=>console.log(err))
+} 
+
 const addNewCustomer = (req,res)=>{
     const costomer = new CustomerModel(req.body)
    // console.log(pd)
-   pd.save(costomer)
+   costomer.save(costomer)
    .then(data=>res.send(data))
    .catch(err=>{
        console.log(err)
@@ -25,6 +31,7 @@ const deleteCustomer = (req,res) =>{
 }
 
 Router.route('/')
+.get(getAllCustomer)
 .post(addNewCustomer)
 Router.route('/:id')
 .get(getSpecificCustomer)

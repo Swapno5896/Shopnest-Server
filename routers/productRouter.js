@@ -29,7 +29,7 @@ const deleteProduct = (req,res) =>{
     .then(data=>res.send(data))
     .catch(err=>console.log(err))
 }
-~
+
 // const updateProduct =(req,res)=>{
 //     ProductMoel.put({_id:req.params.id},{$set:{req.body}})
 //     .then(data=>res.send(data))
