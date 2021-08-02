@@ -1,6 +1,11 @@
 const Router = require('express').Router();
 const CellertMoel = require('../model/sellerModel')
 
+const getAllSeller = (req,res)=>{
+    CellertMoel.find()
+    .then(data=>res.send(data))
+    .catch(err=>console.log(err))
+} 
 const addNewSeller = (req,res)=>{
     const seller = new CellertMoel(req.body)
    // console.log(pd)
@@ -24,6 +29,7 @@ const deleteSeller = (req,res) =>{
 }
 
 Router.route('/')
+.get(getAllSeller)
 .post(addNewSeller)
 Router.route('/:id')
 .get(getSpecificSeller)

@@ -4,7 +4,7 @@ const orderSchema = new Schema({
     userId : Schema.Types.ObjectId,
     customerId:Schema.Types.ObjectId,
     quantity:Number,
-    date: Date,
+   
     status:String,
   
 })

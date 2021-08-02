@@ -10,3 +10,10 @@
 ### get all customers = http://localhost:5000/customer
 ### get specific customer = http://localhost:5000/customer/id
 ### delete cunstomer =  http://localhost:5000/customer/id
+
+## order 
+ ###  get all order = http://localhost:5000/order/
+ ### add new order = http://localhost:5000/order/
+### get specific order = http://localhost:5000/order/id
+### delete order =  http://localhost:5000/order/id
+
